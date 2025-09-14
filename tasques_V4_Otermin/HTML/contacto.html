@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/vnd.icon" href="../CSS/favicon-32x32.png">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <title>TASQUES</title>
+</head>
+
+<body class="pestania-contacto">
+    <div id="parte-arriba">
+        <header>
+            <div id="botones">
+                <button id="btn-modo">☀️🌙</button>
+                <button id="cerrar">salir</button>
+            </div>
+            <div id="titulo">
+                <h1 id="titulo-h1">t a s q u e s</h1>
+            </div>
+        </header>
+    </div>
+
+    <div id="parte-medio">
+        <div id="contenedor-izquierda">
+            <nav id="nav">
+                <ul class="ul-nav">
+                    <li><a href="inicio.html">Inicio</i></a></li>
+                    <li><a href="recordatorios.html">Recordatorios</a></li>
+                    <li><a href="conocerTasques.html">Conocé Tasques</a></li>
+                    <li><a href="contacto.html" class="active">Ponete en contacto</a></li>
+                    <li><a href="opiniones.html">Opiniones de usuarios</a></li>
+                </ul>
+            </nav>
+
+            <div id="widget-reloj">
+                <h3>Relojes</h3>
+                <div class="pom">
+                    <p>Pomodoro</p>
+                    <p id="pomodoro">25:00</p>
+                    <div class="btn-pom">
+                        <button id="comenzar">▶</button>
+                        <button id="parar">❚❚</button>
+                        <button id="resetear">↻</button>
+                    </div>
+                </div>
+                <div class="cron">
+                    <p>Cronómetro</p>
+                    <p id="cronometro">00:00:00</p>
+                    <div class="btn-cron">
+                        <button id="play">▶</button>
+                        <button id="stop">❚❚</button>
+                        <button id="reset">↻</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contenedor-centro">
+            <main>
+                <div class="contenedor-crear-nota">
+                    <h2>Contactanos</h2>
+                    <form id="contacto">
+                        <input type="text" id="nombre" placeholder="Nombre"  >
+                        <input type="email"id="email" placeholder="Correo electrónico"  >
+                        <textarea id="mensaje" cols="30" rows="10"   placeholder="Dejá tu mensaje"></textarea>
+                        <input type="submit" value="Enviar información" id="btn-submit">
+                    </form>
+
+            </main>
+        </div>
+
+        <div id="contenedor-derecha">
+                <div class="frases">
+                    <p id="mostrar-frases"></p>
+                    <p id="la-fecha"></p>
+                </div>
+
+                <div class="tareas-vencer">
+                    <h3>Eventos proximos a vencer</h3>
+                    <ul class="eventos-por-vencer"></ul>
+
+                    <!-- acá tendrían que ir las tareas por vencer, son solo las que tienen una fecha exacta y está llegando-->
+                </div>
+        </div>
+    </div>
+
+    <div id="parte-abajo">
+        <footer>
+            <p>© 2025 Tasques. Todos los derechos reservados. Desarrollado por C.O</p>
+        </footer>
+    </div>
+
+    <script src="../JS/app.js"></script>
+</body>
+
+</html>

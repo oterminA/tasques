@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*con esto hago q el border y el padding sean considerados para el ancho de la caja, me parece q con esto quedan mas parejas las cajas*/
+}
+
+/*para poder modificar el aspecto de la barra de desplazamiento uso el pseudo elemento ::-webkit-scrollbar donde el webkit funciona por el navegador, chrome en este caso*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgb(151, 106, 106); 
+    border-radius: 100px; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(182, 127, 127); 
+}
+  
+
+body {
+    overflow-x: hidden; /*para no mostrar las barras de movimiento en la pagina*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #F4EFE6;
+    color: #5B4C3A;
+    height: 70vh;
+}
+
+
+/**************************************/
+/****DISPOSICIÓN ELEMENTOS GENERALES***/
+/**************************************/
+#parte-arriba { /*seria el header: titulo, boton modo, boton salir*/
+    width: 100%;
+    height: 16%;
+    margin-bottom: 10px;
+}
+
+#parte-medio { /*los dos aside y el main*/
+    display: flex;
+    justify-content: space-between;/*con esto hago que exista espacio entre las tres partes*/
+    margin: 10px;
+}
+
+#parte-abajo footer { /*pequeño footer*/
+    background-color: #e0dcd4;
+    width: 100%;
+    position: absolute;/*con esto y el bottom hago que se quede pegado al borde el footer, funciona con lo de abajho*/
+    bottom: 0;/*si subo el nro, se va subiendo el footer*/
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/***estos contenedores estan dentro de "parte-medio"***/
+#contenedor-izquierda { /*nav, relojes*/
+    display: flex;
+    flex-direction: column;
+    width: 15vw;/*me parece q a veces es mejor usar viewport width para no tener problemas con el tema del tamaño de la pantalla, el vw/vh se ajusta al tamaño de la ventana del navegador y el px es una unidad absoluta que no se modifica con el tamaño de la*/
+}
+#contenedor-centro {/*tareas, eventos*/
+    width: 52vw;
+}
+#contenedor-derecha { /*frases, hora, eventos x vencer*/
+    width: 25vw;
+}
+
+h2 {/*todos los h2*/
+    padding: 15px;
+}
+
+h3 { /*todos los h3*/
+    padding: 5px;
+}
+
+
+/**************************************/
+/********ESTILO LOGIN *****************/
+/**************************************/
+#div-comienzo,
+#form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 20px;
+}
+
+#tit-comienzo {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+#usuario,
+#contrasenia {
+    height: 40px;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#btn-submit-comienzo {
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    bottom: 120px;
+}
+
+#btn-submit-comienzo:hover{
+    background-color: rgb(187, 187, 187);
+}
+
+
+/**************************************/
+/********ESTILO HEADER ****************/
+/**************************************/
+#btn-modo,
+#cerrar {
+    background-color: #fdeed4;
+    border: 1px solid burlywood;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#btn-modo {
+    height: 25px;
+    width: 50px;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+#btn-modo:hover{
+    background-color: #dfc7a1;
+}
+
+#cerrar {
+    height: 25px;
+    width: 50px;
+    cursor: pointer;
+    position: relative;
+    left: 89%;
+}
+
+#cerrar:hover{
+    background-color: #dfc7a1;
+}
+
+#titulo {
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+}
+
+#titulo-h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-style: italic; */
+    cursor: pointer;
+    color: rgb(148, 64, 71);
+    letter-spacing: 5px;
+}
+
+
+/**************************************/
+/********ESTILO NAV *******************/
+/**************************************/
+
+#nav {
+    margin-bottom: 15px;
+    height: 250px; 
+    background-color: #DED1BA;
+    border-radius: 5px;
+}
+ul {
+    list-style: none;
+}
+
+.ul-nav {
+    position: relative;
+    top: 30px;
+}
+
+.ul-nav a {
+    display: block; /*esto hace que los enlaces esten uno debajo del otro porque ocupan todo el espacio*/
+    text-decoration: none;
+    color: #5B4C3A;
+    font-weight: 900;
+    width: 100%;
+    padding: 10px;
+}
+
+.ul-nav a:hover {
+    background-color: rgb(182, 127, 127);
+    color: #F4EFE6;
+}
+
+
+.active {/*esto es para mostrar la pestaña en la q está el usuario, sin esto el estilo es indistinto en las paginas */
+    background-color: rgb(151, 106, 106);
+    color: #F4EFE6;
+}
+
+
+
+/**************************************/
+/********ESTILO RELOJES ****************/
+/**************************************/
+
+#widget-reloj {
+    height: 240px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #DED1BA;
+    border-radius: 5px;
+}
+
+
+.pom p,
+.cron p {
+    text-align: center;
+    font-size: 17px;
+}
+
+#pomodoro,
+#cronometro {
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: #F4EFE6;
+    padding: 5px;
+}
+
+.btn-pom,
+.btn-cron {
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#comenzar,
+#parar,
+#resetear,
+#play,
+#stop,
+#reset {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#reset:hover{
+    background-color: rgb(187, 187, 187);
+}
+
+#stop:hover{
+    background-color: rgb(187, 187, 187);
+}
+#play:hover{
+    background-color: rgb(187, 187, 187);
+}
+#resetear:hover{
+    background-color: rgb(187, 187, 187);
+}
+#parar:hover{
+    background-color: rgb(187, 187, 187);
+}
+#comenzar:hover{
+    background-color: rgb(187, 187, 187);
+}
+
+
+/**************************************/
+/********ESTILO TAREAS ****************/
+/**************************************/
+.contenedor-crear-nota {
+    background-color: #DED1BA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 52vw;
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.contenedor-notas-pendientes {
+    height: 185px;
+    margin-bottom: 12px;
+}
+.contenedor-notas-hechas {
+    height: 205px;
+}
+
+#textarea-crear-tarea {
+    width: 515px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 5px;
+    resize: none; /*esto es para que no me aparezcan las lineas con las que se cambia el tamaño*/
+}
+
+#submit-tarea-btn {
+    width: 50px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: #f5efe4;
+    border-style: none;
+    cursor: pointer;
+}
+#submit-tarea-btn:hover{
+    background-color: #c7c2b8;
+}
+
+.agregar-nota {
+    background-color: #f5efe4;
+    border-radius: 10px;
+    width: 500px;
+    height: 30px;
+}
+
+#p-crear-nota-tarea { 
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#p-crear-nota-tarea:hover{ /*ojo caro del futuro, sé que te vas a olvidar, confundir esto y pensar que es lo mismo q agregar nota pero no lo esss*/
+    background-color:#f5ead2;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-notas-pendientes,
+.contenedor-notas-hechas {
+    background-color: #DED1BA;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-wrap:break-word;
+    border-radius: 10px;
+}
+ 
+
+#cruz-eliminar { 
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(182, 119, 128);
+    font-weight: 600;
+}
+
+#espacio-tarea{ /*este es el li que cree en js, el que tiene la cruz, el span y el checkbox*/
+    margin: 5px;
+    width: 650px;
+}
+
+
+/**************************************/
+/********ESTILO EVENTOS ***************/
+/**************************************/
+
+#textarea-crear-evento {
+    width: 550px;
+    height: 38px;
+    padding: 5px;
+    border-radius: 5px;
+    resize: none; /*esto es para que no me aparezcan las lineas con las que se cambia el tamaño*/
+}
+
+#date-evento { 
+    border-radius: 10px;
+    border: none;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+#submit-evento-btn {
+    width: 50px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: #f5efe4;
+    border-style: none;
+    cursor: pointer;
+}
+#submit-evento-btn:hover {
+    background-color: #c7c2b8;
+}
+
+#p-crear-nota-evento { /*el texto de la pregunta*/
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#p-crear-nota-evento:hover{
+    background-color:#f5ead2;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+#cruz-eliminar-evento { 
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(182, 119, 128); 
+    font-weight: 600;
+}
+
+body.pestania-recordatorios .contenedor-notas-pendientes {
+    display: block;
+    height: 404px;
+}
+
+#li-evento{
+    padding: 10px;
+    width: 600px;
+    position: relative;/*uso el position relative para poder usar el top-bottom-left-right y eso, por si mismo el relative no hace nada*/
+    left: 20px;
+}
+
+/**************************************/
+/******ESTILO FRASES Y FECHA **********/
+/**************************************/
+
+.frases { /*div de las frases*/
+    /*caro del futuro: se que vas a querer ponerle display flex a los dos elementos pero acordate que dentro de este div hay dos elementos <p> y son elementos de bloque, por ende, naturalmente van a ocuper todo el espacio del div*/
+    padding: 20px 5px 20px 5px;
+    width: 340px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    background-color: #DED1BA;
+    height: 198px;
+}
+
+#mostrar-frases {
+    background-color: #F4EFE6;
+    padding: 12px;
+    text-align: center;
+    font-weight: 300;
+    border-radius: 20px;
+    font-style: italic;
+    color: black;
+    width: 210px;
+    position: relative;
+    left: 20%; 
+    margin-bottom: 25px;
+}
+
+#la-fecha {
+    background-color: #F4EFE6;
+    padding: 12px;
+    text-align: center;
+    font-weight: 300;
+    border-radius: 20px;
+    color: black;
+    width: 200px;
+    position: relative;
+    left: 20%;
+    letter-spacing: 2px; /*le pongo letter spacing porque me gusta que se vea como un reloj digital*/
+    font-family: monospace;
+}
+
+/**************************************/
+/********ESTILO EVENTOS PROX **********/
+/**************************************/
+
+.eventos-por-vencer {
+    list-style: square;
+    margin: 10px;
+    padding: 5px;
+}
+
+.tareas-vencer {/*el div del widget*/
+    height: 292px;
+    overflow-y: scroll; /*esto es para mostrar solamente la barra que sube y baja, no la horizontal en caso de que haya*/
+    word-wrap: break-word; /*esto es para que se corte la palabra y siga abajo en caso de que lo que escriba el usuario exceda el espacio visual horizontal del div*/
+    background-color: #DED1BA;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.tareas-vencer:hover{
+    background-color: #e7dbc5;
+}
+
+/**************************************/
+/******** CONOCER TASQUES **********/
+/**************************************/
+
+body.pestania-conocer .contenedor-crear-nota { /*sin el body.pestania-conocer se modifica lo que está en las otras pestañas, por eso de que se comparte el div, entonces poniendolo puedo dejar el div sin modificar el nombre y controlar el estilo de todos los lugares sin perjudicar a los demás*/
+    height: 515px;
+}
+
+body.pestania-conocer .contenedor-crear-nota h2{
+    position: relative;
+    right: 240px;
+}
+
+
+#texto-tasques {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 650px;
+    margin: 30px;
+    position: relative;
+    bottom: 20px;
+}
+
+#texto-tasques h3{
+    margin-top: 20px;
+    position: relative;
+    right: 200px;
+}
+
+.li-conocer{
+    list-style:circle;
+    font-weight: 600;
+    margin: 20px;
+    text-decoration: underline;
+}
+
+
+/**************************************/
+/******** CONTACTO **********/
+/**************************************/
+
+body.pestania-contacto .contenedor-crear-nota { /*esto es para que el contenedor tenga este formato cuando se encuentra en esa pestaña, porque como comparte elemento con la pestaña de recordatorio, por ejemplo, tengo que hacer que se diferencie de alguna manera para darle un comportamiento diferente, creo q es mas facil hacer esto que hacer un contenedor especificamente para esa pestaña y darle el css que tienen las otras partes (q a veces es el mismo);
+con el body.pestania accedo a la pestaña que contenga solo esa clase*/
+    height: 515px;
+}
+
+body.pestania-contacto .contenedor-crear-nota h2{
+    position: relative;
+    right: 249px;
+    bottom: 15px;
+}
+
+#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    flex-direction: column;
+}
+
+#nombre,
+#email {
+    width: 300px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mensaje {
+    width: 400px;
+    height: 150px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 0.5px solid grey;
+    resize: none; /*esto es para que no me aparezcan las lineas con las que se cambia el tamaño, mas q nada por lo estetico*/
+    color: gray;
+}
+
+#btn-submit {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn-submit:hover{
+    background-color: rgb(187, 187, 187);
+}
+
+/**************************************/
+/******** OPINIONES **********/
+/**************************************/
+
+body.pestania-opiniones .contenedor-crear-nota {/*lo mismo que en las otras secciones*/
+    height: 515px;
+    position: relative;
+    right: 390px;
+    width: 1095px;
+}
+
+body.pestania-opiniones .contenedor-crear-nota h2 { /*lo mismo, en su momento usé el mismo h2 para todo y ahora no quiero modificarlo en cada pestaña*/
+    position: relative;
+    right: 300px;
+}
+
+.contenedor-opiniones { /*es el div q contiene a los otros dos divs de 3 opiniones c/u*/
+    width: 850px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 140px;
+    height: 100px;
+    border: none;
+    border-radius: 100%;
+    margin-bottom: 5px;
+}
+
+.opinion { /*los p con los textos de opiniones*/
+    font-style: italic;
+    width: 220px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #F4EFE6;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}

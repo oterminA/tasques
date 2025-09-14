@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/vnd.icon" href="../CSS/favicon-32x32.png">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <title>TASQUES</title>
+</head>
+
+<body class="pestania-conocer">
+    <div id="parte-arriba">
+        <header>
+            <div id="botones">
+                <button id="btn-modo">☀️🌙</button>
+                <button id="cerrar">salir</button>
+            </div>
+            <div id="titulo">
+                <h1 id="titulo-h1">t a s q u e s</h1>
+            </div>
+        </header>
+    </div>
+
+    <div id="parte-medio">
+        <div id="contenedor-izquierda">
+            <nav id="nav">
+                <ul class="ul-nav">
+                    <li><a href="inicio.html">Inicio</i></a></li>
+                    <li><a href="recordatorios.html">Recordatorios</a></li>
+                    <li><a href="conocerTasques.html" class="active">Conocé Tasques</a></li>
+                    <li><a href="contacto.html">Ponete en contacto</a></li>
+                    <li><a href="opiniones.html">Opiniones de usuarios</a></li>
+                </ul>
+            </nav>
+
+            <div id="widget-reloj">
+                <h3>Relojes</h3>
+                <div class="pom">
+                    <p>Pomodoro</p>
+                    <p id="pomodoro">25:00</p>
+                    <div class="btn-pom">
+                        <button id="comenzar">▶</button>
+                        <button id="parar">❚❚</button>
+                        <button id="resetear">↻</button>
+                    </div>
+                </div>
+                <div class="cron">
+                    <p>Cronómetro</p>
+                    <p id="cronometro">00:00:00</p>
+                    <div class="btn-cron">
+                        <button id="play">▶</button>
+                        <button id="stop">❚❚</button>
+                        <button id="reset">↻</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contenedor-centro">
+            <main>
+                <div class="contenedor-crear-nota">
+                    <h2>¿Qué es Tasques?</h2>
+                    <div id="texto-tasques">
+                        <p>Tasques ("tareas" en catalán) surge a partir de la necesidad de crear una pagina web que cumpla con un propósito. Ese propósito es generar un  espacio <i>cómodo</i> y <i> fácil </i>de usar  al registrar tus eventos o tareas pendientes. </p><br>
+                        <h3>Preguntas frecuentes (FAQ): </h3>
+                        <ul>
+                            <li class="li-conocer">¿Cuántas tareas puedo almacenar?</li>
+                              <p>Podés almacenar <b>todas</b>  las tareas que creas necesario guardar. Podes escribir tareas de plazo
+                                corto e inmediato (por ejemplo, "comprar comida para el perro") o guardar eventos que tienen fecha fija
+                                (por ejemplo, "cumpleaños de mamá"). Incluso vas a poder visualizar en un pequeño 'widget' aquellos eventos que están por acontecer en 7 días o menos. </p> <br>
+                            
+                            <li class="li-conocer"> ¿Quién creó TASQUES y por qué?</li>
+                             
+                              <p>La página fue creada por Carolina Otermin, en el año 2025. Este es un <b>proyecto final</b> de una de las materias que se dictan en el primer año de la carrera TUDW. Se usó <i>HTML</i>, <i>CSS</i> y <i>JavaScript</i> básico. </p>
+                            
+                          </ul>
+                          
+                    </div>
+
+            </main>
+        </div>
+
+        <div id="contenedor-derecha">
+                <div class="frases">
+                    <p id="mostrar-frases"></p>
+                    <p id="la-fecha"></p>
+                </div>
+
+                <div class="tareas-vencer">
+                    <h3>Eventos proximos a vencer</h3>
+                    <ul class="eventos-por-vencer"></ul>
+
+                    <!-- acá tendrían que ir las tareas por vencer, son solo las que tienen una fecha exacta y está llegando-->
+                </div>
+        </div>
+    </div>
+
+    <div id="parte-abajo">
+        <footer>
+            <p>© 2025 Tasques. Todos los derechos reservados. Desarrollado por C.O</p>
+        </footer>
+    </div>
+
+    <script src="../JS/app.js"></script>
+</body>
+
+</html>
