@@ -28,8 +28,3 @@ Al ser un proyecto de programación estática:
 1. **En local**: El proyecto se puede visualizar simplemente abriendo el archivo `index.html` en cualquier navegador moderno.
 2. **Desde VS Code**: Se recomienda utilizar la extensión **Live Server** para una previsualización en tiempo real durante el desarrollo.
 3. **Interactividad**: El usuario puede interactuar con la aplicación directamente desde la ventana del navegador para gestionar sus tareas.
-
-
----
-
-*Proyecto académico para la carrera de Licenciatura/Tecnicatura en Informática.*
